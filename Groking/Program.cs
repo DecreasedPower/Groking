@@ -4,12 +4,31 @@ class Program
 {
     static void Main(string[] args)
     {
-        int[] array = [1, 3, 5, 7, 9];
-        Console.WriteLine(BinarySearch(array, 1));
-        Console.WriteLine(BinarySearch(array, 3));
-        Console.WriteLine(BinarySearch(array, 5));
-        Console.WriteLine(BinarySearch(array, 7));
-        Console.WriteLine(BinarySearch(array, 9));
+        // Console.WriteLine(Factorial(-1));
+        Console.WriteLine(Factorial(0));
+        Console.WriteLine(Factorial(1));
+        Console.WriteLine(Factorial(2));
+        Console.WriteLine(Factorial(14));
+    }
+
+    static int Factorial(int number)
+    {
+        if (number < 0)
+        {
+            throw new ArgumentException("incorrect number value", nameof(number));
+        }
+
+        if (number == 0)
+        {
+            return 0;
+        }
+
+        if (number == 1)
+        {
+            return 1;
+        }
+
+        return number * Factorial(number - 1);
     }
 
     static int BinarySearch(int[] array, int item)
