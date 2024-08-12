@@ -4,11 +4,44 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Console.WriteLine(Factorial(-1));
-        Console.WriteLine(Factorial(0));
-        Console.WriteLine(Factorial(1));
-        Console.WriteLine(Factorial(2));
-        Console.WriteLine(Factorial(14));
+        List<int> arrayToSort = [5, 3, 6, 2, 10];
+
+        var sortedArray = SelectionSort(arrayToSort);
+
+        foreach (int value in sortedArray)
+        {
+            Console.WriteLine(value);
+        }
+    }
+
+    static List<int> SelectionSort(List<int> arrayToSort)
+    {
+        int length = arrayToSort.Count;
+        List<int> newArray = [];
+        for (int i = 0; i < length; i++)
+        {
+            int smallest = GetSmallest(arrayToSort);
+            newArray.Add(arrayToSort[smallest]);
+            arrayToSort.RemoveAt(smallest);
+        }
+
+        return newArray;
+
+        int GetSmallest(List<int> array)
+        {
+            int smallest = array[0];
+            int smallestIndex = 0;
+            for (int i = 1; i < array.Count; i++)
+            {
+                if (array[i] < smallest)
+                {
+                    smallest = array[i];
+                    smallestIndex = i;
+                }
+            }
+
+            return smallestIndex;
+        }
     }
 
     static int Factorial(int number)
