@@ -4,14 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<int> arrayToSort = [5, 3, 6, 2, 10];
-
-        var sortedArray = SelectionSort(arrayToSort);
-
-        foreach (int value in sortedArray)
-        {
-            Console.WriteLine(value);
-        }
+        Console.WriteLine(new DateTime(2024, 1, 1).ToString("dd.MM.yyyy"));
     }
 
     static List<int> SelectionSort(List<int> arrayToSort)
